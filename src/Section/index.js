@@ -1,12 +1,14 @@
 import "./style.css";
 
-const Section = (props) => (
+const Section = ({title, body, extraContent}) => (
   <section className="section">
-    <div className="section__box">
-      <h2 className="section__title">{props.title}</h2>
-      {props.extraContent}
+    <header className="section__header">
+      <h2 className="section__title">{title}</h2>
+      {extraContent}
+    </header>
+    <div className="section__body">
+    {body}
     </div>
-    {props.body}
   </section>
 );
 
