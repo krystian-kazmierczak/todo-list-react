@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
@@ -8,10 +8,17 @@ import Container from "./Container";
 
 function App() {
   const [hideDoneTasks, setHideDoneTasks] = useState(false);
-  const [tasks, setTasks] = useState([
-    { id: 1, content: "przejśc na reacta", done: false },
-    { id: 2, content: "test", done: true },
-  ]);
+
+  const getSavedTasks = () => {
+    const tasksFromLocalStorage = localStorage.getItem("tasks");
+    return tasksFromLocalStorage ? JSON.parse(tasksFromLocalStorage) : [];
+  };
+
+  const [tasks, setTasks] = useState(getSavedTasks);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   const toggleHideDoneTasks = () => {
     setHideDoneTasks((hideDoneTasks) => !hideDoneTasks);
@@ -58,9 +65,7 @@ function App() {
 
       <Section
         title="Dodaj nowe zadanie"
-        body={
-          <Form addNewTask={addNewTask} />
-        }
+        body={<Form addNewTask={addNewTask} />}
       />
 
       <Section
