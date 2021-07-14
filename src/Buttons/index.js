@@ -1,22 +1,20 @@
-import "./style.css";
+import { Wraper, StyledButton} from "./styled";
 
 const Buttons = ({tasks, hideDoneTasks, toggleHideDoneTasks, setAllTaskDone}) => (
   tasks.length > 0 && (
-    <div className="buttons">
-      <button 
-        className="buttons__button" 
+    <Wraper>
+      <StyledButton 
         onClick={toggleHideDoneTasks}
       >
         {hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
-      </button>
-      <button
-        className="buttons__button"
+      </StyledButton>
+      <StyledButton
         disabled={tasks.every(({ done }) => done)}
         onClick={setAllTaskDone}
       >
         Ukończ wszystkie
-      </button>
-    </div>
+      </StyledButton>
+    </Wraper>
   )
 ) 
 export default Buttons;
