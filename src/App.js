@@ -4,7 +4,7 @@ import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from "./Header";
-import Container from "./Container";
+import Container from "./Container/styled";
 
 function App() {
   const [hideDoneTasks, setHideDoneTasks] = useState(false);
