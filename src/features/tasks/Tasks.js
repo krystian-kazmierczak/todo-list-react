@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useTasks } from "../../useTasks";
 import Form from "./Form";
 import TasksList from "./TasksList";
 import Buttons from "./Buttons";
@@ -8,42 +6,16 @@ import Header from "../../common/Header";
 import Container from "../../common/Container/styled";
 
 function Tasks() {
-  const [hideDoneTasks, setHideDoneTasks] = useState(false);
-
-  const toggleHideDoneTasks = () => {
-    setHideDoneTasks((hideDoneTasks) => !hideDoneTasks);
-  };
-
-  const { tasks, removeTask, toggleTaskDone, setAllTaskDone, addNewTask } =
-    useTasks();
-
   return (
     <Container>
       <Header title="Lista zadań" />
 
-      <Section
-        title="Dodaj nowe zadanie"
-        body={<Form addNewTask={addNewTask} />}
-      />
+      <Section title="Dodaj nowe zadanie" body={<Form />} />
 
       <Section
         title="Lista zadań"
-        body={
-          <TasksList
-            tasks={tasks}
-            hideDoneTasks={hideDoneTasks}
-            removeTask={removeTask}
-            toggleTaskDone={toggleTaskDone}
-          />
-        }
-        extraContent={
-          <Buttons
-            tasks={tasks}
-            hideDoneTasks={hideDoneTasks}
-            toggleHideDoneTasks={toggleHideDoneTasks}
-            setAllTaskDone={setAllTaskDone}
-          />
-        }
+        body={<TasksList />}
+        extraContent={<Buttons />}
       />
     </Container>
   );
