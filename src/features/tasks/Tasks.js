@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { useTasks } from "../../useTasks";
 import Form from "./Form";
-import Tasks from "./TasksList";
+import TasksList from "./TasksList";
 import Buttons from "./Buttons";
 import Section from "../../common/Section";
 import Header from "../../common/Header";
 import Container from "../../common/Container/styled";
 
-function Task() {
+function Tasks() {
   const [hideDoneTasks, setHideDoneTasks] = useState(false);
 
   const toggleHideDoneTasks = () => {
@@ -29,7 +29,7 @@ function Task() {
       <Section
         title="Lista zadań"
         body={
-          <Tasks
+          <TasksList
             tasks={tasks}
             hideDoneTasks={hideDoneTasks}
             removeTask={removeTask}
@@ -49,4 +49,4 @@ function Task() {
   );
 }
 
-export default Task;
+export default Tasks;

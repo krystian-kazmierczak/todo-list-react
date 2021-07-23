@@ -1,3 +1,3 @@
-import Task from './features/tasks/Task'
+import Tasks from "./features/tasks/Tasks"
 
-export default () => <Task />;
+export default () => <Tasks />;
