@@ -20,6 +20,7 @@ const Form = ({ addNewTask }) => {
     }
     addNewTask(trimedNewTaskContent);
     setNewTaskContent("");
+    focusInput();
   };
 
   return (
@@ -29,9 +30,10 @@ const Form = ({ addNewTask }) => {
         value={newTaskContent}
         placeholder="Co jest do zrobienia?"
         required
+        autofocus
         onChange={({ target }) => setNewTaskContent(target.value)}
       />
-      <SubmitButton onClick={focusInput}>Dodaj zadanie</SubmitButton>
+      <SubmitButton>Dodaj zadanie</SubmitButton>
     </StyledForm>
   );
 };
