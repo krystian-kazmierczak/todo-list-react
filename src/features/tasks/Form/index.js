@@ -30,7 +30,7 @@ const Form = ({ addNewTask }) => {
         value={newTaskContent}
         placeholder="Co jest do zrobienia?"
         required
-        autofocus
+        autoFocus
         onChange={({ target }) => setNewTaskContent(target.value)}
       />
       <SubmitButton>Dodaj zadanie</SubmitButton>
