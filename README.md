@@ -11,7 +11,23 @@ In this project i created simple To-Do list. Functionality off this application 
 1. You can add new tasks by clicking button "Dodaj zadanie" or "Enter"
 2. You can identify your task as realised by clicking green button.
 3. You can also delete tasks by clicking red button
+4. You can hide completed tasks by clicking on the "Ukryj ukończone" button.
+5. You can show hidden tasks by clicking on the "Pokaż ukończone" button.
+6. If you want to mark all tasks as completed, click the "Ukończ wszystkie" button.
 
+## Technologies
+- Semantic HTML
+- CSS
+- Styled-components
+- Media queries
+- Grid
+- Flexbox
+- ES6+ features
+- Immutability
+- React
+- Hooks (useState, useEffect useRef, useSelector, useDispatch)
+- custom Hooks
+- Redux
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
