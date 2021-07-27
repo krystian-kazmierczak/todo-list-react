@@ -2,7 +2,8 @@ import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { addNewTask } from "../../tasksSlice";
-import { Input, StyledForm, SubmitButton } from "./styled";
+import { StyledForm, SubmitButton } from "./styled";
+import Input from "../../Input/styled";
 
 const Form = () => {
   const [newTaskContent, setNewTaskContent] = useState("");
