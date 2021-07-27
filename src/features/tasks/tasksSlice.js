@@ -30,7 +30,7 @@ const tasksSlice = createSlice({
     fetchExampleTasks: (state) => {},
     setTasks: (state, { payload: tasks }) => {
       state.tasks = tasks;
-  },
+    },
   },
 });
 
@@ -52,5 +52,7 @@ export const selectHideDoneTasks = (state) =>
 export const selectAreTasksEmpty = (state) => selectTasks(state).length === 0;
 export const selectIsEveryTaskDone = (state) =>
   selectTasks(state).every(({ done }) => done);
+export const getTaskById = (state, taskId) =>
+  selectTasks(state).find(({ id }) => id === taskId);
 
 export default tasksSlice.reducer;
