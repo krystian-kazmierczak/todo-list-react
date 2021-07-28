@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import Container from "../../../common/Container/styled";
 import Header from "../../../common/Header";
 import Section from "../../../common/Section";
+import { Link } from "./styled";
 
 export default function AuthorPage() {
   return (
@@ -17,8 +17,13 @@ export default function AuthorPage() {
             <p>Moim celem jest zostać frontend developerem 💫</p>
             <p>Chcesz dowiedzieć się więcej o moich projektach?</p>
             <p>
-              Spojrzeć na mój profil na githubie:{" "}
-              <Link to="https://github.com/krystian-kazmierczak">GitHub</Link>
+              Zajrzyj na moją stronę na{" "}
+              <Link
+                href="https://github.com/krystian-kazmierczak"
+                target="_blank"
+              >
+                GitHub
+              </Link>
             </p>
           </>
         }
