@@ -1,28 +1,28 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
-  fetchExampleTasks,
   selectAreTasksEmpty,
   selectHideDoneTasks,
   selectIsEveryTaskDone,
+  selectTasks,
   setAllTaskDone,
   toggleHideDoneTasks,
 } from "../../tasksSlice";
-import { StyledButtons, Button } from "./styled";
+import { Wrapper, Button } from "../Button/styled";
 
 const Buttons = () => {
+  const tasks = useSelector(selectTasks); 
   const areTasksEmpty = useSelector(selectAreTasksEmpty);
   const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
   const hideDoneTasks = useSelector(selectHideDoneTasks);
   const dispatch = useDispatch();
 
   return (
-    <StyledButtons>
-      <Button onClick={() => dispatch(fetchExampleTasks())}>
-        Pobierz przykładowe zadania
-      </Button>
+    <Wrapper>
       {!areTasksEmpty && (
         <>
-          <Button onClick={() => dispatch(toggleHideDoneTasks())}>
+          <Button onClick={() => {
+            if (tasks.some((task) => task.done)){
+            dispatch(toggleHideDoneTasks())}}}>
             {hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
           </Button>
           <Button
@@ -33,7 +33,7 @@ const Buttons = () => {
           </Button>
         </>
       )}
-    </StyledButtons>
+    </Wrapper>
   )
 };
 
