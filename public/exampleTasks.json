@@ -1,12 +1,17 @@
 [
   {
-    "content": "Przykładowe zadanie 1",
+    "content": "Opanować preprocesor Sass",
     "done": false,
     "id": "fIfbW0RJSPEFksno5X9qR"
   },
   {
-    "content": "Przykładowe zadanie 2",
+    "content": "Opanować yarn",
     "done": false,
     "id": "ocayy7IYe5clqXO9MZkzk"
+  },
+  {
+    "content": "Nauczyć się Node.js",
+    "done": false,
+    "id": "xrVHPeSWh8atR0MDltRed"
   }
 ]
