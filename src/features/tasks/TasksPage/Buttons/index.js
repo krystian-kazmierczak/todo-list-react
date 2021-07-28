@@ -3,16 +3,16 @@ import {
   selectAreTasksEmpty,
   selectHideDoneTasks,
   selectIsEveryTaskDone,
-  selectTasks,
+  selectIsEveryTaskUndone,
   setAllTaskDone,
   toggleHideDoneTasks,
 } from "../../tasksSlice";
 import { Wrapper, Button } from "../Button/styled";
 
 const Buttons = () => {
-  const tasks = useSelector(selectTasks); 
   const areTasksEmpty = useSelector(selectAreTasksEmpty);
   const isEveryTaskDone = useSelector(selectIsEveryTaskDone);
+  const isEveryTaskUndone = useSelector(selectIsEveryTaskUndone);
   const hideDoneTasks = useSelector(selectHideDoneTasks);
   const dispatch = useDispatch();
 
@@ -20,9 +20,8 @@ const Buttons = () => {
     <Wrapper>
       {!areTasksEmpty && (
         <>
-          <Button onClick={() => {
-            if (tasks.some((task) => task.done)){
-            dispatch(toggleHideDoneTasks())}}}>
+          <Button onClick={() => dispatch(toggleHideDoneTasks())}
+            disabled={isEveryTaskUndone}>
             {hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
           </Button>
           <Button

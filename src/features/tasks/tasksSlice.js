@@ -59,6 +59,7 @@ export const selectHideDoneTasks = (state) => selectTaskState(state).hideDoneTas
 export const selectLoading = state => selectTaskState(state).loading;
 export const selectAreTasksEmpty = (state) => selectTasks(state).length === 0;
 export const selectIsEveryTaskDone = (state) => selectTasks(state).every(({ done }) => done);
+export const selectIsEveryTaskUndone = (state) => selectTasks(state).every(({ done }) => !done);
 export const getTaskById = (state, taskId) => selectTasks(state).find(({ id }) => id === taskId);
 
 export const selectTasksByQuery = (state, query) => {
