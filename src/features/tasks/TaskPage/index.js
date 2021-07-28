@@ -13,12 +13,12 @@ export default function TaskPage() {
     <Container>
       <Header title="Szczegóły zadania" />
       <Section
-        title={task ? task.content : "Nie ma takiego zadania!"}
+        title={task ? task.content : "Nie ma takiego zadania! 😜"}
         body={
           task && (
             <>
               <strong>Ukończono: </strong>
-              {task.done ? "Tak" : "Nie"}
+              {task.done ? "Tak 👏" : "Nie 😞"}
             </>
           )
         }
